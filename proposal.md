@@ -1,7 +1,7 @@
 # Collect the Fruit!
 
 ## Repository
-
+https://github.com/Morenmel/Collect-the-Fruit.git
 
 ## Description
 "Collect the Fruit" is an interactive game where the player collects falling fruits continously-- with the falling speed increasing over time-- until one fruit touches the ground.
