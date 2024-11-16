@@ -18,7 +18,8 @@ def main():
 
 
         # Render & Display
-
+        black = pygame.Color(0, 0, 0)
+        screen.fill(black)
 
     pygame.quit()
 
