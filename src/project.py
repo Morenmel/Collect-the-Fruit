@@ -45,7 +45,13 @@ def main():
 
         # Render & Display
         black = pygame.Color(0, 0, 0)
+        green = pygame.Color(36, 128, 43)
+
         screen.fill(black)
+        surf = pygame.Surface((800, 100))
+        surf.fill(green)
+        screen.blit(surf, (0, 540))
+
         clock.tick(60)
         player.draw(screen)
         pygame.display.flip()
