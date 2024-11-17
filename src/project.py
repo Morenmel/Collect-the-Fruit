@@ -46,6 +46,7 @@ def main():
         black = pygame.Color(0, 0, 0)
         screen.fill(black)
         clock.tick(60)
+        player.draw(screen)
     pygame.quit()
 
 
