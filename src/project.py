@@ -1,4 +1,5 @@
 import pygame
+from PIL import Image
 
 class GameObject:
     def __init__(self, pos=(0,0), sprite_path=''):
