@@ -27,6 +27,7 @@ def main():
     player = GameObject(pos=((320, 240)), sprite_path="graphics/apple_object.png")
 
     running = True
+    keys = pygame.key.get_pressed()
     while running:
         # Event Loop
         for event in pygame.event.get():
