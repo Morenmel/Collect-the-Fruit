@@ -21,7 +21,7 @@ def main():
     clock = pygame.time.Clock()
 
     with Image.open("graphics/apple.png") as img:
-        resized = img.resize((70, 65))
+        resized = img.resize((42, 37))
         resized.save("graphics/apple_object.png")
     
     # Player img placeholder
