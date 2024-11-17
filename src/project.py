@@ -24,16 +24,17 @@ def main():
         resized = img.resize((70, 65))
         resized.save("graphics/apple_object.png")
     
+    # Player img placeholder
     player = GameObject(pos=((320, 240)), sprite_path="graphics/apple_object.png")
 
     running = True
-    keys = pygame.key.get_pressed()
     while running:
         # Event Loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        
+
+        keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             player.move(pygame.Vector2(-1, 0))
         if keys[pygame.K_RIGHT]:
