@@ -6,6 +6,7 @@ def main():
     pygame.display.set_caption("Collect the Fruit!")
     resolution = (800, 600)
     screen = pygame.display.set_mode(resolution)
+    clock = pygame.time.Clock()
 
     running = True
     while running:
@@ -20,9 +21,8 @@ def main():
         # Render & Display
         black = pygame.Color(0, 0, 0)
         screen.fill(black)
-
+        clock.tick(60)
     pygame.quit()
-
 
 
 if __name__ == "__main__":
