@@ -20,6 +20,10 @@ def main():
     screen = pygame.display.set_mode(resolution)
     clock = pygame.time.Clock()
 
+    with Image.open("graphics/apple.png") as img:
+        resized = img.resize((70, 65))
+        resized.save("graphics/apple_object.png")
+
     running = True
     while running:
         # Event Loop
