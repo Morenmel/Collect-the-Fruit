@@ -47,6 +47,7 @@ def main():
         screen.fill(black)
         clock.tick(60)
         player.draw(screen)
+        pygame.display.flip()
     pygame.quit()
 
 
