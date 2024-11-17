@@ -25,7 +25,7 @@ def main():
         resized.save("graphics/apple_object.png")
     
     # Player img placeholder
-    player = GameObject(pos=((320, 240)), sprite_path="graphics/apple_object.png")
+    player = GameObject(pos=((100, 480)), sprite_path="graphics/apple_object.png")
 
     running = True
     while running:
