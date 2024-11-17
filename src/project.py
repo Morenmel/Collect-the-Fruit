@@ -33,6 +33,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        
+        if keys[pygame.K_LEFT]:
+            player.move(pygame.Vector2(-1, 0))
+        if keys[pygame.K_RIGHT]:
+            player.move(pygame.Vector2(1, 0))
 
         # Game Logic
 
