@@ -23,6 +23,8 @@ def main():
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((70, 65))
         resized.save("graphics/apple_object.png")
+    
+    player = GameObject(pos=((320, 240)), sprite_path="graphics/apple_object.png")
 
     running = True
     while running:
