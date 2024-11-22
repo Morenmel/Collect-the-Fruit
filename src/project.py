@@ -2,7 +2,7 @@ import pygame
 from PIL import Image
 
 
-class PlayerObject:
+class PlayerObject():
     def __init__(self, pos=(0,0), sprite_path=''):
         self.pos = pygame.Vector2(pos)
         self.speed = 3.0
@@ -15,7 +15,7 @@ class PlayerObject:
         screen.blit(self.image, self.pos)
 
 
-class Fruit:
+class Fruit():
     def __init__(self, pos=(15, 15), center=15):
         self.pos = pos
         self.center = center
@@ -23,6 +23,24 @@ class Fruit:
 
     def draw(self, surface):
         pygame.draw.circle(surface, self.color, self.pos, self.center)
+
+
+class FallingFruit():
+    def __init__(self, pos, size):
+        self.pos = pos
+        self.size = size
+        self.fruits = []
+        self._update_pos()
+
+    def update(self, dt):
+        fruit = Fruit(self.pos, self.size)
+        self.fruits.insert(0, fruit)
+        self._update_pos()
+    
+    def _update_pos(self):
+        x, y = self.pos
+        y += self.speed
+        self.pos = (x, y)
 
 
 def main():
