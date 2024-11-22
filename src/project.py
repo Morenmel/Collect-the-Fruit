@@ -56,7 +56,7 @@ def main():
     dt = 0
 
     #fruit = Fruit()
-    falling = FallingFruit((0, 0), 15)
+    falling = FallingFruit((15, 0), 15)
 
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((42, 37))
@@ -93,7 +93,7 @@ def main():
 
         falling.draw(screen)
 
-        clock.tick(60)
+        clock.tick(12)
         player.draw(screen)
         pygame.display.flip()
     pygame.quit()
