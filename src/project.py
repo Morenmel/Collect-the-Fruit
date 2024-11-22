@@ -55,6 +55,10 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 540))
 
+        red = pygame.Color(255, 0, 0)
+        pos = (16, 16)
+        pygame.draw.circle(screen, red, pos, 15)
+
         clock.tick(60)
         player.draw(screen)
         pygame.display.flip()
