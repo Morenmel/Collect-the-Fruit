@@ -75,6 +75,7 @@ def main():
             player.move(pygame.Vector2(1, 0))
 
         # Game Logic
+        falling.update(dt)
 
 
         # Render & Display
@@ -86,7 +87,7 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 540))
 
-        fruit.draw(screen)
+        falling.draw(screen)
 
         clock.tick(60)
         player.draw(screen)
