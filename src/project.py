@@ -39,8 +39,12 @@ class FallingFruit():
     
     def _update_pos(self):
         x, y = self.pos
-        y += self.speed
+        y += self.size
         self.pos = (x, y)
+
+    def draw(self, surface):
+        for fruit in self.fruits:
+            fruit.draw(surface)
 
 
 def main():
