@@ -33,6 +33,8 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    fruit = Fruit()
+
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((42, 37))
         resized.save("graphics/apple_object.png")
@@ -65,6 +67,7 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 540))
 
+        fruit.draw(screen)
 
         clock.tick(60)
         player.draw(screen)
