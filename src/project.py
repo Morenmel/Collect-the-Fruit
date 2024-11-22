@@ -26,14 +26,15 @@ class Fruit():
 
 
 class FallingFruit():
-    def __init__(self, pos, size):
+    def __init__(self, pos, size, life):
         self.pos = pos
         self.size = size
+        self.life = life
         self.fruits = []
         self._update_pos()
 
     def update(self, dt):
-        fruit = Fruit(self.pos, self.size)
+        fruit = Fruit(self.pos, self.size, self.life)
         self.fruits.insert(0, fruit)
         self._update_pos()
     
@@ -56,7 +57,7 @@ def main():
     dt = 0
 
     #fruit = Fruit()
-    falling = FallingFruit((15, 0), 15)
+    falling = FallingFruit((15, 0), 15, 1000)
 
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((42, 37))
