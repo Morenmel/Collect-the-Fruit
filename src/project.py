@@ -1,7 +1,8 @@
 import pygame
 from PIL import Image
 
-class GameObject:
+
+class PlayerObject:
     def __init__(self, pos=(0,0), sprite_path=''):
         self.pos = pygame.Vector2(pos)
         self.speed = 3.0
@@ -13,19 +14,21 @@ class GameObject:
     def draw(self, screen):
         screen.blit(self.image, self.pos)
 
+
 def main():
     pygame.init()
     pygame.display.set_caption("Collect the Fruit!")
     resolution = (800, 600)
     screen = pygame.display.set_mode(resolution)
     clock = pygame.time.Clock()
+    dt = 0
 
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((42, 37))
         resized.save("graphics/apple_object.png")
     
     # Player img placeholder
-    player = GameObject(pos=((100, 480)), sprite_path="graphics/apple_object.png")
+    player = PlayerObject(pos=((100, 480)), sprite_path="graphics/apple_object.png")
 
     running = True
     while running:
