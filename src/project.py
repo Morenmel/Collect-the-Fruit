@@ -15,6 +15,16 @@ class PlayerObject:
         screen.blit(self.image, self.pos)
 
 
+class Fruit:
+    def __init__(self, pos=(15, 15), center=15):
+        self.pos = pos
+        self.center = center
+        self.color = pygame.Color(255, 0, 0)
+
+    def draw(self, surface):
+        pygame.draw.circle(surface, self.color, self.pos, self.center)
+
+
 def main():
     pygame.init()
     pygame.display.set_caption("Collect the Fruit!")
@@ -55,9 +65,6 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 540))
 
-        red = pygame.Color(255, 0, 0)
-        pos = (16, 16)
-        pygame.draw.circle(screen, red, pos, 15)
 
         clock.tick(60)
         player.draw(screen)
