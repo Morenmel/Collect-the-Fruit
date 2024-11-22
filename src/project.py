@@ -51,7 +51,8 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    fruit = Fruit()
+    #fruit = Fruit()
+    falling = FallingFruit((0, 0), 15)
 
     with Image.open("graphics/apple.png") as img:
         resized = img.resize((42, 37))
