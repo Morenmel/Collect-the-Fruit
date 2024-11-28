@@ -6,7 +6,7 @@ import random
 class PlayerObject():
     def __init__(self, pos=(0,0), sprite_path=''):
         self.pos = pygame.Vector2(pos)
-        self.speed = 3.0
+        self.speed = 15
         self.image = pygame.image.load(sprite_path).convert_alpha()
 
     def move(self, direction):
