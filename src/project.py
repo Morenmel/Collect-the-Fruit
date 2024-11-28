@@ -1,5 +1,6 @@
 import pygame
 from PIL import Image
+import random
 
 
 class PlayerObject():
@@ -16,9 +17,10 @@ class PlayerObject():
 
 
 class Fruit():
-    def __init__(self, pos=(15, 15), center=15):
+    def __init__(self, pos=(15, 15), center=15, life=1000):
         self.pos = pos
         self.center = center
+        self.life = life
         self.color = pygame.Color(255, 0, 0)
 
     def draw(self, surface):
