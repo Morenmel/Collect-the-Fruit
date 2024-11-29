@@ -76,6 +76,10 @@ class Rain():
             fruit = FallingFruit(pos, self.fruit_size, life)
             self.fruits.insert(0, fruit)
 
+    def draw(self, surface):
+        for fruit in self.fruits:
+            fruit.draw(surface)
+
 
 def main():
     pygame.init()
