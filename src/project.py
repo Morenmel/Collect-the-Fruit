@@ -91,6 +91,7 @@ def main():
 
     #fruit = Fruit()
     falling = FallingFruit((15, 0), 15, 1000)
+    rain = Rain(resolution)
 
     with Image.open("graphics/basket.png") as img:
         resized = img.resize((124, 56))
@@ -98,7 +99,6 @@ def main():
     
     # Player img placeholder
     player = PlayerObject(pos=((100, 460)), sprite_path="graphics/basket_object.png")
-    rain = Rain(resolution)
 
     running = True
     while running:
