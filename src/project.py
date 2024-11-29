@@ -101,6 +101,7 @@ def main():
 
         clock.tick(12)
         player.draw(screen)
+        fruit_icon.draw(screen)
         pygame.display.flip()
     pygame.quit()
 
