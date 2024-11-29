@@ -52,6 +52,31 @@ class FallingFruit():
         surface.blit(self.image, self.pos)
 
 
+class Rain():
+    def __init__(self, screen_res):
+        self.screen_res = screen_res
+        self.fruit_size = 15
+        self.birth_rate = 1
+        self.fruits = []
+
+    def update(self, dt):
+        self._birth_new_fruits()
+        self.update_fruits(dt)
+
+    def update_fruits(self, dt):
+        for fruit in self.fruits:
+            fruit.update(dt)
+    
+    def _birth_new_fruits(self):
+        for num in range(self.birth_rate):
+            screen_width = self.screen_res[0]
+            x = random.randrange(0, screen_width, self.fruit_size)
+            pos = (x, 0)
+            life = random.randrange(100, 500)
+            fruit = FallingFruit(pos, self.fruit_size, life)
+            self.fruits.insert(0, fruit)
+
+
 def main():
     pygame.init()
     pygame.display.set_caption("Collect the Fruit!")
