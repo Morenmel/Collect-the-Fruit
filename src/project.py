@@ -28,7 +28,7 @@ class Fruit():
 
 
 class FallingFruit():
-    def __init__(self, pos, size, life, sprite_path=''):
+    def __init__(self, pos, size, life, sprite_path="graphics/apple_object.png"):
         self.pos = pos
         self.size = size
         self.life = life
