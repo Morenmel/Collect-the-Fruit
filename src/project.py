@@ -124,7 +124,7 @@ def main():
         screen.fill(black)
         surf = pygame.Surface((800, 100))
         surf.fill(green)
-        screen.blit(surf, (0, 540))
+        screen.blit(surf, (0, 700))
 
         rain.draw(screen)
 
