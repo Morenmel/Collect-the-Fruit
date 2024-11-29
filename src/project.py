@@ -69,7 +69,7 @@ def main():
     
     # Player img placeholder
     player = PlayerObject(pos=((100, 480)), sprite_path="graphics/apple_object.png")
-    fruit_icon = FallingFruit(sprite_path="graphics/apple_object.png")
+    fruit_icon = FallingFruit(pos=((0, 0)), size=15, life=1000, sprite_path="graphics/apple_object.png")
 
     running = True
     while running:
