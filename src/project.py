@@ -6,7 +6,7 @@ import random
 class PlayerObject():
     def __init__(self, pos=(0,0), sprite_path=''):
         self.pos = pygame.Vector2(pos)
-        self.speed = 15
+        self.speed = 18
         self.image = pygame.image.load(sprite_path).convert_alpha()
 
     def move(self, direction):
@@ -68,7 +68,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=((100, 480)), sprite_path="graphics/basket_object.png")
+    player = PlayerObject(pos=((100, 460)), sprite_path="graphics/basket_object.png")
 
     running = True
     while running:
