@@ -98,7 +98,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=((100, 460)), sprite_path="graphics/basket_object.png")
+    player = PlayerObject(pos=((100, 610)), sprite_path="graphics/basket_object.png")
 
     running = True
     while running:
