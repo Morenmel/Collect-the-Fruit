@@ -119,9 +119,10 @@ def main():
 
         # Render & Display
         black = pygame.Color(0, 0, 0)
+        sky_blue = pygame.Color(129, 190, 235)
         green = pygame.Color(36, 128, 43)
 
-        screen.fill(black)
+        screen.fill(sky_blue)
         surf = pygame.Surface((800, 100))
         surf.fill(green)
         screen.blit(surf, (0, 700))
