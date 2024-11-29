@@ -98,6 +98,7 @@ def main():
     
     # Player img placeholder
     player = PlayerObject(pos=((100, 460)), sprite_path="graphics/basket_object.png")
+    rain = Rain(resolution)
 
     running = True
     while running:
@@ -113,7 +114,7 @@ def main():
             player.move(pygame.Vector2(1, 0))
 
         # Game Logic
-        falling.update(dt)
+        rain.update(dt)
 
 
         # Render & Display
@@ -125,7 +126,7 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 540))
 
-        falling.draw(screen)
+        rain.draw(screen)
 
         clock.tick(12)
         player.draw(screen)
