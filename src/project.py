@@ -84,7 +84,7 @@ class Rain():
 def main():
     pygame.init()
     pygame.display.set_caption("Collect the Fruit!")
-    resolution = (800, 600)
+    resolution = (705, 800)
     screen = pygame.display.set_mode(resolution)
     clock = pygame.time.Clock()
     dt = 0
