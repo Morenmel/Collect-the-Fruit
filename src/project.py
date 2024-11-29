@@ -76,7 +76,7 @@ class Rain():
     
     def _birth_new_fruits(self):
         for num in range(self.birth_rate):
-            x = random.randrange(100, 570, self.fruit_size)
+            x = random.randrange(100, 570)
             pos = (x, -50)
             life = random.randrange(100, 500)
             fruit = FallingFruit(pos, self.fruit_size, life)
