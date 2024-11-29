@@ -71,7 +71,7 @@ class Rain():
                 del self.fruits[idx]
 
     def _offscreen_fruit(self, fruit):
-        offscreen_fruit = fruit.fruits[0].pos[1] > self.screen_res[1]
+        offscreen_fruit = fruit.fruits[0].pos[1] > 672
         return offscreen_fruit
     
     def _birth_new_fruits(self):
