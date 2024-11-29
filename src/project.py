@@ -63,12 +63,12 @@ def main():
     #fruit = Fruit()
     falling = FallingFruit((15, 0), 15, 1000)
 
-    with Image.open("graphics/apple.png") as img:
-        resized = img.resize((42, 37))
-        resized.save("graphics/apple_object.png")
+    with Image.open("graphics/basket.png") as img:
+        resized = img.resize((124, 56))
+        resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=((100, 480)), sprite_path="graphics/apple_object.png")
+    player = PlayerObject(pos=((100, 480)), sprite_path="graphics/basket_object.png")
 
     running = True
     while running:
