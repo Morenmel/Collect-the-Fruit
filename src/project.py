@@ -125,6 +125,9 @@ def main():
 
 
         # Render & Display
+        score = font.render(text, True, (0, 0, 0))
+        screen.blit(score, (0, 0))
+
         sky_blue = pygame.Color(129, 190, 235)
         green = pygame.Color(36, 128, 43)
 
