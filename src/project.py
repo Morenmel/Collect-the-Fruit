@@ -95,8 +95,6 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    #fruit = Fruit()
-    #falling = FallingFruit((15, 0), 15, 1000)
     rain = Rain(resolution)
 
     with Image.open("graphics/basket.png") as img:
