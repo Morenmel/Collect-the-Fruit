@@ -66,13 +66,13 @@ class Rain():
     def _update_fruits(self, dt):
         for idx, fruit in enumerate(self.fruits):
             fruit.update(dt)
-            if self._offscreen_fruit(fruit):
+            if self._fruit_on_ground(fruit):
                 print("deleting fruit...")
                 del self.fruits[idx]
 
-    def _offscreen_fruit(self, fruit):
-        offscreen_fruit = fruit.fruits[0].pos[1] > 672
-        return offscreen_fruit
+    def _fruit_on_ground(self, fruit):
+        fruit_on_ground = fruit.fruits[0].pos[1] > 672
+        return fruit_on_ground
     
     def _birth_new_fruits(self):
         for num in range(self.birth_rate):
