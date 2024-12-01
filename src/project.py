@@ -124,7 +124,6 @@ def main():
 
 
         # Render & Display
-        black = pygame.Color(0, 0, 0)
         sky_blue = pygame.Color(129, 190, 235)
         green = pygame.Color(36, 128, 43)
 
