@@ -95,6 +95,9 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    font = pygame.font.SysFont("Arial", 15)
+    text = "Score: "
+
     rain = Rain(resolution)
 
     with Image.open("graphics/basket.png") as img:
