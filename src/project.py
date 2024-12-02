@@ -28,12 +28,12 @@ class Fruit():
 
 
 class FallingFruit():
-    def __init__(self, pos, size, life, sprite_path="graphics/apple_object.png"):
+    def __init__(self, pos, size, life):
         self.pos = pos
         self.size = size
         self.life = life
         self.color = pygame.Color(255, 0, 0)
-        self.image = pygame.image.load(sprite_path).convert_alpha()
+        self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.fruits = []
         self._update_pos()
 
@@ -49,7 +49,9 @@ class FallingFruit():
 
     def draw(self, surface):
         #pygame.draw.circle(surface, self.color, self.pos, self.size)
-        surface.blit(self.image, self.pos)
+        angle = 45
+        rotate_img = pygame.transform.rotate(self.image, angle)
+        surface.blit(rotate_img, self.pos)
 
 
 class Rain():
