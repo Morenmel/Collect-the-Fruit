@@ -138,7 +138,7 @@ def main():
         score = font.render(text, True, (0, 0, 0))
         screen.blit(score, (0, 0))
 
-        clock.tick(12)
+        dt = clock.tick(12)
         player.draw(screen)
         pygame.display.flip()
     pygame.quit()
