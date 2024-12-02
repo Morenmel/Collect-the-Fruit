@@ -132,13 +132,13 @@ def main():
 
         # sky background
         screen.fill(sky_blue)
-        surf = pygame.Surface((800, 100))
 
         # tree trunk
         tree_trunk = pygame.image.load("graphics/tree_trunk.png").convert_alpha()
         screen.blit(tree_trunk, (0, 0))
 
         # ground
+        surf = pygame.Surface((800, 100))
         surf.fill(green)
         screen.blit(surf, (0, 700))
 
