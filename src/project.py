@@ -48,7 +48,6 @@ class FallingFruit():
         self.pos = (x, y)
 
     def draw(self, surface):
-        #pygame.draw.circle(surface, self.color, self.pos, self.size)
         angle = 45
         rotate_img = pygame.transform.rotate(self.image, angle)
         surface.blit(rotate_img, self.pos)
