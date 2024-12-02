@@ -127,7 +127,7 @@ def main():
 
 
         # Render & Display
-        sky_blue = pygame.Color(147, 206, 250)
+        sky_blue = pygame.Color(133, 212, 255)
         green = pygame.Color(36, 128, 43)
 
         # sky background
