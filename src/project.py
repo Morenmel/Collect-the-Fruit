@@ -100,7 +100,7 @@ def main():
 
     rain = Rain(resolution)
 
-    with Image.open("graphics/basket.png") as img:
+    with Image.open("graphics/new_basket.png") as img:
         resized = img.resize((124, 56))
         resized.save("graphics/basket_object.png")
     
@@ -125,7 +125,7 @@ def main():
 
 
         # Render & Display
-        sky_blue = pygame.Color(129, 190, 235)
+        sky_blue = pygame.Color(147, 206, 250)
         green = pygame.Color(36, 128, 43)
 
         screen.fill(sky_blue)
