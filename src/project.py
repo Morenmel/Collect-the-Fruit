@@ -29,6 +29,7 @@ class Fruit():
 
 class FallingFruit():
     def __init__(self, pos, size, life):
+        self.angle = 0
         self.pos = pos
         self.size = size
         self.life = life
@@ -48,8 +49,8 @@ class FallingFruit():
         self.pos = (x, y)
 
     def draw(self, surface):
-        angle = 45
-        rotate_img = pygame.transform.rotate(self.image, angle)
+        self.angle += 3
+        rotate_img = pygame.transform.rotate(self.image, self.angle)
         surface.blit(rotate_img, self.pos)
 
 
