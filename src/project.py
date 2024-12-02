@@ -17,10 +17,9 @@ class PlayerObject():
 
 
 class Fruit():
-    def __init__(self, pos=(15, 15), center=15, life=1000):
+    def __init__(self, pos=(15, 15), center=15):
         self.pos = pos
         self.center = center
-        self.life = life
         self.color = pygame.Color(255, 0, 0)
 
     def draw(self, surface):
@@ -28,19 +27,18 @@ class Fruit():
 
 
 class FallingFruit():
-    def __init__(self, pos, size, life):
+    def __init__(self, pos, size):
         self.angle1 = 0
         self.angle2 = 0
         self.pos = pos
         self.size = size
-        self.life = life
         self.color = pygame.Color(255, 0, 0)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.fruits = []
         self._update_pos()
 
     def update(self, dt):
-        fruit = Fruit(self.pos, self.size, self.life)
+        fruit = Fruit(self.pos, self.size)
         self.fruits.insert(0, fruit)
         self._update_pos()
     
@@ -58,7 +56,7 @@ class FallingFruit():
 class Rain():
     def __init__(self, screen_res):
         self.screen_res = screen_res
-        self.fruit_size = 12
+        self.fruit_size = 10
         self.birth_rate = 1
         self.fruits = []
 
@@ -81,8 +79,7 @@ class Rain():
         for num in range(self.birth_rate):
             x = random.randrange(100, 570)
             pos = (x, -50)
-            life = random.randrange(100, 500)
-            fruit = FallingFruit(pos, self.fruit_size, life)
+            fruit = FallingFruit(pos, self.fruit_size)
             self.fruits.insert(0, fruit)
 
     def draw(self, surface):
