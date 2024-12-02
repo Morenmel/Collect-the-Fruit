@@ -50,9 +50,8 @@ class FallingFruit():
         self.pos = (x, y)
 
     def draw(self, surface):
-        self.angle1 -= 3
-        self.angle2 += 3
-        rotate_img = pygame.transform.rotate(self.image, random.randrange(self.angle1, self.angle2))
+        self.angle1 += 5
+        rotate_img = pygame.transform.rotate(self.image, self.angle1)
         surface.blit(rotate_img, self.pos)
 
 
