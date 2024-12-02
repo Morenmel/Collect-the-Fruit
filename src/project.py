@@ -58,6 +58,7 @@ class Rain():
         self.screen_res = screen_res
         self.fruit_size = 10
         self.birth_rate = 1
+        self.y = 0
         self.fruits = []
 
     def update(self, dt):
@@ -77,8 +78,9 @@ class Rain():
     
     def _birth_new_fruits(self):
         for num in range(self.birth_rate):
-            x = random.randrange(100, 570)
-            pos = (x, -50)
+            x = random.randrange(115, 565)
+            self.y -= 200
+            pos = (x, self.y)
             fruit = FallingFruit(pos, self.fruit_size)
             self.fruits.insert(0, fruit)
 
