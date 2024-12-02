@@ -58,7 +58,7 @@ class FallingFruit():
 class Rain():
     def __init__(self, screen_res):
         self.screen_res = screen_res
-        self.fruit_size = 15
+        self.fruit_size = 12
         self.birth_rate = 1
         self.fruits = []
 
@@ -141,7 +141,7 @@ def main():
         score = font.render(text, True, (0, 0, 0))
         screen.blit(score, (0, 0))
 
-        dt = clock.tick(12)
+        dt = clock.tick(18)
         player.draw(screen)
         pygame.display.flip()
     pygame.quit()
