@@ -136,7 +136,13 @@ def main():
         surf.fill(green)
         screen.blit(surf, (0, 700))
 
+        tree_trunk = pygame.image.load("graphics/tree_trunk.png").convert_alpha()
+        screen.blit(tree_trunk, (0, 0))
+
         rain.draw(screen)
+
+        tree_leaves = pygame.image.load("graphics/tree_leaves.png").convert_alpha()
+        screen.blit(tree_leaves, (0, 0))
 
         score = font.render(text, True, (0, 0, 0))
         screen.blit(score, (0, 0))
