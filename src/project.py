@@ -128,20 +128,26 @@ def main():
         sky_blue = pygame.Color(147, 206, 250)
         green = pygame.Color(36, 128, 43)
 
+        # sky background
         screen.fill(sky_blue)
         surf = pygame.Surface((800, 100))
 
+        # tree trunk
         tree_trunk = pygame.image.load("graphics/tree_trunk.png").convert_alpha()
         screen.blit(tree_trunk, (0, 0))
 
+        # ground
         surf.fill(green)
         screen.blit(surf, (0, 700))
 
+        # apples
         rain.draw(screen)
 
+        # tree leaves
         tree_leaves = pygame.image.load("graphics/tree_leaves.png").convert_alpha()
         screen.blit(tree_leaves, (0, 0))
 
+        # score text
         score = font.render(text, True, (0, 0, 0))
         screen.blit(score, (0, 0))
 
