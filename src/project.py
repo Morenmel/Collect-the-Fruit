@@ -13,6 +13,8 @@ class PlayerObject():
         self.pos = self.pos + direction * self.speed
     
     def draw(self, screen):
+        image = pygame.Surface.get_rect(self.image)
+        print(image)
         screen.blit(self.image, self.pos)
 
 
@@ -72,17 +74,9 @@ class Rain():
                 print("deleting fruit...")
                 del self.fruits[idx]
 
-            if self._fruit_in_basket(fruit):
-                print("Apple caught!")
-                del self.fruits[idx]
-
     def _fruit_on_ground(self, fruit):
         fruit_on_ground = fruit.fruits[0].pos[1] > 672
         return fruit_on_ground
-    
-    def _fruit_in_basket(self, fruit):
-        fruit_collision = pygame.Rect.colliderect(fruit, PlayerObject)
-        return fruit_collision
     
     def _birth_new_fruits(self):
         for num in range(self.birth_rate):
