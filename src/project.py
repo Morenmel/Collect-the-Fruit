@@ -56,6 +56,9 @@ class FallingFruit():
         rotate_img = pygame.transform.rotate(self.image, self.angle1)
         surface.blit(rotate_img, self.pos)
 
+    def apple_rect(self):
+        apple_rect = pygame.Surface.get_rect(self.image)
+        return apple_rect
 
 class Rain():
     def __init__(self, screen_res):
