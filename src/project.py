@@ -56,7 +56,7 @@ class FallingFruit():
 class Rain():
     def __init__(self, screen_res):
         self.screen_res = screen_res
-        self.fruit_size = 10
+        self.fruit_size = 13
         self.birth_rate = 1
         self.y = 0
         self.fruits = []
