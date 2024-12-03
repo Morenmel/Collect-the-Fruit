@@ -14,7 +14,6 @@ class PlayerObject():
     
     def draw(self, screen):
         image = pygame.Surface.get_rect(self.image)
-        print(image)
         screen.blit(self.image, self.pos)
 
 
