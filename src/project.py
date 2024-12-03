@@ -16,8 +16,8 @@ class PlayerObject():
         screen.blit(self.image, self.pos)
 
     def _basket_rect(self):
-        image = pygame.Surface.get_rect(self.image)
-        return image
+        basket_rect = pygame.Surface.get_rect(self.image)
+        return basket_rect
 
 
 class Fruit():
@@ -56,7 +56,7 @@ class FallingFruit():
         rotate_img = pygame.transform.rotate(self.image, self.angle1)
         surface.blit(rotate_img, self.pos)
 
-    def apple_rect(self):
+    def _apple_rect(self):
         apple_rect = pygame.Surface.get_rect(self.image)
         return apple_rect
 
