@@ -81,7 +81,7 @@ class Rain():
         return fruit_on_ground
     
     def _fruit_in_basket(self, fruit):
-        fruit_collision = fruit.colliderect(PlayerObject)
+        fruit_collision = pygame.Rect.colliderect(fruit, PlayerObject)
         return fruit_collision
     
     def _birth_new_fruits(self):
