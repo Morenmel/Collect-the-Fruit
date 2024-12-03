@@ -13,8 +13,11 @@ class PlayerObject():
         self.pos = self.pos + direction * self.speed
     
     def draw(self, screen):
-        image = pygame.Surface.get_rect(self.image)
         screen.blit(self.image, self.pos)
+
+    def _basket_rect(self):
+        image = pygame.Surface.get_rect(self.image)
+        return image
 
 
 class Fruit():
