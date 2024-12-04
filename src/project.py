@@ -141,7 +141,7 @@ def main():
         
         collision = pygame.sprite.collide_rect(player, fruit)
         if collision:
-            print("FRUIT SNATCHED")
+            print("COLLISION")
             score += 1
 
         # Game Logic
@@ -172,8 +172,8 @@ def main():
         screen.blit(tree_leaves, (0, 0))
 
         # score text
-        score = font.render(text, True, (0, 0, 0))
-        screen.blit(score, (10, 760))
+        score_text = font.render(text, True, (0, 0, 0))
+        screen.blit(score_text, (10, 760))
 
         dt = clock.tick(18)
         player.draw(screen)
