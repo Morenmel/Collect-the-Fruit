@@ -14,6 +14,7 @@ class PlayerObject(pygame.sprite.Sprite):
     def move(self, posX, posY):
         self.rect.x += posX
         self.rect.y += posY
+        self.rect.topleft = (self.rect.x, self.rect.y)
 
     def draw(self, screen):
         screen.blit(self.image, (self.rect.x, self.rect.y))
