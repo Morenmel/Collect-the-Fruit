@@ -114,10 +114,11 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=((290, 600)), sprite_path="graphics/basket_object.png")
+    player = PlayerObject(pos=(290, 600), sprite_path="graphics/basket_object.png")
+    fruit = Fruit(pos=(15, 15), center=15)
 
-    basket_group = pygame.sprite.Group([player])
-    print(basket_group)
+    player_group = pygame.sprite.Group(player)
+    fruit_group = pygame.sprite.Group(fruit)
 
     running = True
     while running:
