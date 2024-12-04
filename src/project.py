@@ -13,6 +13,8 @@ class PlayerObject(pygame.sprite.Sprite):
 
     def move(self, direction):
         self.pos = self.pos + direction * self.speed
+        self.rect = self.pos
+        print(self.rect)
     
     def draw(self, screen):
         screen.blit(self.image, self.pos)
