@@ -4,7 +4,7 @@ import random
 
 
 class PlayerObject(pygame.sprite.Sprite):
-    def __init__(self, pos, sprite_path=''):
+    def __init__(self, pos, sprite_path='graphics/basket_object.png'):
         pygame.sprite.Sprite.__init__(self)
         self.x = 290
         self.y = 600
@@ -120,7 +120,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=(290, 600), sprite_path="graphics/basket_object.png")
+    player = PlayerObject(pos=(290, 600))
     fruit = Fruit(pos=(15, 15), center=15)
 
     player_group = pygame.sprite.Group(player)
