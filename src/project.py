@@ -110,6 +110,9 @@ def main():
     # Player img placeholder
     player = PlayerObject(pos=((290, 600)), sprite_path="graphics/basket_object.png")
 
+    basket_group = pygame.sprite.Group([player])
+    print(basket_group)
+
     running = True
     while running:
         # Event Loop
