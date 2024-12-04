@@ -107,7 +107,7 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    font = pygame.font.SysFont("Arial", 20)
+    font = pygame.font.SysFont("Arial", 25)
     score = 0
     text = f"Score: {score}"
 
@@ -171,7 +171,7 @@ def main():
 
         # score text
         score = font.render(text, True, (0, 0, 0))
-        screen.blit(score, (0, 0))
+        screen.blit(score, (10, 760))
 
         dt = clock.tick(18)
         player.draw(screen)
