@@ -3,11 +3,13 @@ from PIL import Image
 import random
 
 
-class PlayerObject():
+class PlayerObject(pygame.sprite.Sprite):
     def __init__(self, pos, sprite_path=''):
+        pygame.sprite.Sprite.__init__(self)
         self.pos = pygame.Vector2(pos)
         self.speed = 18
         self.image = pygame.image.load(sprite_path).convert_alpha()
+        self.rect = self.image.get_rect
 
     def move(self, direction):
         self.pos = self.pos + direction * self.speed
