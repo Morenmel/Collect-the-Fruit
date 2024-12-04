@@ -108,7 +108,8 @@ def main():
     dt = 0
 
     font = pygame.font.SysFont("Arial", 20)
-    text = "Score: "
+    score = 0
+    text = f"Score: {score}"
 
     rain = Rain(resolution)
 
@@ -123,8 +124,6 @@ def main():
     player_group = pygame.sprite.Group(player)
     fruit_group = pygame.sprite.Group(fruit)
 
-    collide = pygame.sprite.groupcollide(player_group, fruit_group, False, True)
-
     running = True
     while running:
         # Event Loop
@@ -137,6 +136,11 @@ def main():
             player.move(pygame.Vector2(-1, 0))
         if keys[pygame.K_RIGHT]:
             player.move(pygame.Vector2(1, 0))
+        
+        collide = pygame.sprite.spritecollideany(player, fruit_group)
+        if collide != None:
+            print("PLEASE")
+            score += 1
 
         # Game Logic
         rain.update(dt)
