@@ -79,7 +79,6 @@ class Rain():
         for idx, fruit in enumerate(self.fruits):
             fruit.update(dt)
             if self._fruit_on_ground(fruit):
-                print("deleting fruit...")
                 del self.fruits[idx]
 
     def _fruit_on_ground(self, fruit):
@@ -139,7 +138,7 @@ def main():
         
         collide = pygame.sprite.spritecollideany(player, fruit_group)
         if collide != None:
-            print("PLEASE")
+            print("Fruit collected!")
             score += 1
 
         # Game Logic
