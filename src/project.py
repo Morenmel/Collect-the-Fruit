@@ -4,11 +4,11 @@ import random
 
 
 class PlayerObject(pygame.sprite.Sprite):
-    def __init__(self, x, y, sprite_path=''):
+    def __init__(self, pos, sprite_path=''):
         pygame.sprite.Sprite.__init__(self)
         self.x = 290
         self.y = 600
-        self.pos = (self.x, self.y)
+        self.pos = pos
         self.image = pygame.image.load(sprite_path).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.topleft = self.pos
@@ -120,7 +120,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(x=290, y=600, sprite_path="graphics/basket_object.png")
+    player = PlayerObject(pos=(290, 600), sprite_path="graphics/basket_object.png")
     fruit = Fruit(pos=(15, 15), center=15)
 
     player_group = pygame.sprite.Group(player)
@@ -138,6 +138,11 @@ def main():
             player.move(posx= -18, posy = 0)
         if keys[pygame.K_RIGHT]:
             player.move(posx= 18, posy = 0)
+        
+        collision = pygame.sprite.collide_rect(player, fruit)
+        if collision:
+            print("FRUIT SNATCHED")
+            score += 1
 
         # Game Logic
         rain.update(dt)
