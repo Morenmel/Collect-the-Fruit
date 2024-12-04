@@ -4,20 +4,23 @@ import random
 
 
 class PlayerObject(pygame.sprite.Sprite):
-    def __init__(self, pos, sprite_path=''):
+    def __init__(self, x, y, sprite_path=''):
         pygame.sprite.Sprite.__init__(self)
-        self.pos = pygame.Vector2(pos)
-        self.speed = 18
+        self.x = 290
+        self.y = 600
+        self.pos = (self.x, self.y)
         self.image = pygame.image.load(sprite_path).convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect.topleft = pos
-
-    def move(self, direction):
-        self.pos = self.pos + direction * self.speed
         self.rect.topleft = self.pos
-    
+
+    def move(self, posx, posy):
+        self.x += posx
+        self.y += posy
+        self.pos = (self.x, self.y)
+        self.rect.topleft = self.pos
+
     def draw(self, screen):
-        screen.blit(self.image, self.pos)
+        screen.blit(self.image, (self.x, self.y))
 
 
 class Fruit(pygame.sprite.Sprite):
@@ -117,7 +120,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=(290, 600), sprite_path="graphics/basket_object.png")
+    player = PlayerObject(x=290, y=600, sprite_path="graphics/basket_object.png")
     fruit = Fruit(pos=(15, 15), center=15)
 
     player_group = pygame.sprite.Group(player)
@@ -132,14 +135,9 @@ def main():
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            player.move(pygame.Vector2(-1, 0))
+            player.move(posx= -18, posy = 0)
         if keys[pygame.K_RIGHT]:
-            player.move(pygame.Vector2(1, 0))
-        
-        collide = pygame.sprite.spritecollideany(player, fruit_group)
-        if collide != None:
-            print("Fruit collected!")
-            score += 1
+            player.move(posx= 18, posy = 0)
 
         # Game Logic
         rain.update(dt)
