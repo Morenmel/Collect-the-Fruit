@@ -120,6 +120,8 @@ def main():
     player_group = pygame.sprite.Group(player)
     fruit_group = pygame.sprite.Group(fruit)
 
+    collide = pygame.sprite.groupcollide(player_group, fruit_group, False, True)
+
     running = True
     while running:
         # Event Loop
