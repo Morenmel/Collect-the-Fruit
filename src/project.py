@@ -9,11 +9,12 @@ class PlayerObject(pygame.sprite.Sprite):
         self.pos = pygame.Vector2(pos)
         self.speed = 18
         self.image = pygame.image.load(sprite_path).convert_alpha()
-        self.rect = self.image.get_rect().topleft=pos
+        self.rect = self.image.get_rect()
+        self.rect.topleft = pos
 
     def move(self, direction):
         self.pos = self.pos + direction * self.speed
-        self.rect = self.pos
+        self.rect.topleft = self.pos
     
     def draw(self, screen):
         screen.blit(self.image, self.pos)
@@ -26,7 +27,8 @@ class Fruit(pygame.sprite.Sprite):
         self.center = center
         self.color = pygame.Color(255, 0, 0)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
-        self.rect = self.image.get_rect().topleft=pos
+        self.rect = self.image.get_rect()
+        self.rect.topleft = pos
 
     def draw(self, screen):
         #pygame.draw.circle(surface, self.color, self.pos, self.center)
@@ -59,6 +61,7 @@ class FallingFruit():
         self.angle1 += 5
         rotate_img = pygame.transform.rotate(self.image, self.angle1)
         surface.blit(rotate_img, self.pos)
+
 
 class Rain():
     def __init__(self, screen_res):
