@@ -4,23 +4,19 @@ import random
 
 
 class PlayerObject(pygame.sprite.Sprite):
-    def __init__(self, pos, sprite_path='graphics/basket_object.png'):
+    def __init__(self, x=290, y=600, sprite_path='graphics/basket_object.png'):
         pygame.sprite.Sprite.__init__(self)
-        self.x = 290
-        self.y = 600
-        self.pos = pos
         self.image = pygame.image.load(sprite_path).convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect.topleft = self.pos
+        self.rect.x = x
+        self.rect.y = y
 
-    def move(self, posx, posy):
-        self.x += posx
-        self.y += posy
-        self.pos = (self.x, self.y)
-        self.rect.topleft = self.pos
+    def move(self, posX, posY):
+        self.rect.x += posX
+        self.rect.y += posY
 
     def draw(self, screen):
-        screen.blit(self.image, (self.x, self.y))
+        screen.blit(self.image, (self.rect.x, self.rect.y))
 
 
 class Fruit(pygame.sprite.Sprite):
@@ -120,7 +116,7 @@ def main():
         resized.save("graphics/basket_object.png")
     
     # Player img placeholder
-    player = PlayerObject(pos=(290, 600))
+    player = PlayerObject(x=290, y=600)
     fruit = Fruit(pos=(15, 15), center=15)
 
     player_group = pygame.sprite.Group(player)
@@ -135,9 +131,9 @@ def main():
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            player.move(posx= -18, posy = 0)
+            player.move(posX= -18, posY = 0)
         if keys[pygame.K_RIGHT]:
-            player.move(posx= 18, posy = 0)
+            player.move(posX= 18, posY = 0)
         
         collision = pygame.sprite.collide_rect(player, fruit)
         if collision:
