@@ -4,7 +4,7 @@ import random
 
 
 class PlayerObject():
-    def __init__(self, pos=(0,0), sprite_path=''):
+    def __init__(self, pos, sprite_path=''):
         self.pos = pygame.Vector2(pos)
         self.speed = 18
         self.image = pygame.image.load(sprite_path).convert_alpha()
@@ -14,10 +14,6 @@ class PlayerObject():
     
     def draw(self, screen):
         screen.blit(self.image, self.pos)
-
-    def _basket_rect(self):
-        basket_rect = pygame.Surface.get_rect(self.image)
-        return basket_rect
 
 
 class Fruit():
@@ -55,10 +51,6 @@ class FallingFruit():
         self.angle1 += 5
         rotate_img = pygame.transform.rotate(self.image, self.angle1)
         surface.blit(rotate_img, self.pos)
-
-    def _apple_rect(self):
-        apple_rect = pygame.Surface.get_rect(self.image)
-        return apple_rect
 
 class Rain():
     def __init__(self, screen_res):
