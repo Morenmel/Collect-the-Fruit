@@ -29,7 +29,7 @@ class Fruit(pygame.sprite.Sprite):
         self.center = center
 
     def draw(self, screen):
-        screen.blit(self.image, self.pos)
+        screen.blit(self.image, (self.rect.x, self.rect.y))
 
 
 class FallingFruit():
