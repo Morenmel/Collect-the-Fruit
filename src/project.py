@@ -24,8 +24,8 @@ class Fruit(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect = x
-        self.rect = y
+        self.rect.x = x
+        self.rect.y = y
         self.center = center
 
     def draw(self, screen):
