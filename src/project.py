@@ -133,7 +133,7 @@ def main():
         if keys[pygame.K_RIGHT]:
             player.move(posX= 18, posY = 0)
         
-        print(fruit.rect)
+        #print(fruit.rect)
         collision = pygame.sprite.collide_rect(player, fruit)
         if collision:
             print("COLLISION")
