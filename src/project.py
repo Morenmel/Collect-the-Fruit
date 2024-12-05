@@ -20,12 +20,14 @@ class PlayerObject(pygame.sprite.Sprite):
 
 
 class Fruit(pygame.sprite.Sprite):
-    def __init__(self, pos=(15, 15), center=15):
+    def __init__(self, pos, size):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.rect = self.image.get_rect()
         self.pos = pos
-        self.center = center
+        self.size = size
+        FallingFruit._update_pos(self)
+        #print(self.rect)
 
 
 class FallingFruit():
@@ -51,6 +53,7 @@ class FallingFruit():
         self.pos = (x, y)
         self.rect.y = y
         self.rect.x = x
+        #print(self.rect)
 
     def draw(self, surface):
         self.angle1 += 5
@@ -113,7 +116,7 @@ def main():
     
     # Player img placeholder
     player = PlayerObject(x=290, y=600)
-    fruit = Fruit(pos=(15, 15), center=15)
+    fruit = Fruit(pos=(15, 0), size=15)
 
     player_group = pygame.sprite.Group(player)
     fruit_group = pygame.sprite.Group(fruit)
