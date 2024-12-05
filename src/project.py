@@ -87,7 +87,6 @@ class Rain():
         for num in range(self.birth_rate):
             x = random.randrange(115, 565)
             self.y -= 200
-            pos = (x, self.y)
             fruit = FallingFruit(x, self.y, self.fruit_size)
             self.fruits.insert(0, fruit)
 
