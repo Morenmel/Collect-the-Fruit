@@ -14,7 +14,6 @@ class PlayerObject(pygame.sprite.Sprite):
     def move(self, posX, posY):
         self.rect.x += posX
         self.rect.y += posY
-        self.rect.topleft = (self.rect.x, self.rect.y)
 
     def draw(self, screen):
         screen.blit(self.image, (self.rect.x, self.rect.y))
@@ -164,6 +163,9 @@ def main():
         # apples
         rain.draw(screen)
 
+        # player
+        player.draw(screen)
+
         # tree leaves
         tree_leaves = pygame.image.load("graphics/tree_leaves.png").convert_alpha()
         screen.blit(tree_leaves, (0, 0))
@@ -173,7 +175,6 @@ def main():
         screen.blit(score_text, (10, 760))
 
         dt = clock.tick(18)
-        player.draw(screen)
         pygame.display.flip()
     pygame.quit()
 
