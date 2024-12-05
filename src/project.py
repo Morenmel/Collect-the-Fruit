@@ -49,7 +49,8 @@ class FallingFruit():
         x, y = self.pos
         y += self.size
         self.pos = (x, y)
-        self.rect = (self.pos)
+        self.rect.y = y
+        self.rect.x = x
 
     def draw(self, surface):
         self.angle1 += 5
