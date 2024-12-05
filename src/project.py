@@ -20,12 +20,11 @@ class PlayerObject(pygame.sprite.Sprite):
 
 
 class Fruit(pygame.sprite.Sprite):
-    def __init__(self, x=15, y=15, center=15):
+    def __init__(self, pos=(15, 15), center=15):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+        self.pos = pos
         self.center = center
 
     def draw(self, screen):
