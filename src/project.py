@@ -34,12 +34,10 @@ class Fruit(pygame.sprite.Sprite):
 
 class FallingFruit():
     def __init__(self, pos, size):
+        self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.angle1 = 0
-        self.angle2 = 0
         self.pos = pos
         self.size = size
-        self.color = pygame.Color(255, 0, 0)
-        self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.fruits = []
         self._update_pos()
 
