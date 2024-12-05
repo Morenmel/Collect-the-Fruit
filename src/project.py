@@ -24,13 +24,11 @@ class Fruit(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.pos = pos
         self.center = center
-        self.color = pygame.Color(255, 0, 0)
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.topleft = pos
 
     def draw(self, screen):
-        #pygame.draw.circle(surface, self.color, self.pos, self.center)
         screen.blit(self.image, self.pos)
 
 
