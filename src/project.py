@@ -27,15 +27,15 @@ class Fruit(pygame.sprite.Sprite):
         self.pos = pos
         self.center = center
 
-    def draw(self, screen):
-        screen.blit(self.image, (self.rect.x, self.rect.y))
-
 
 class FallingFruit():
-    def __init__(self, pos, size):
+    def __init__(self, x, y, size):
         self.image = pygame.image.load("graphics/apple_object.png").convert_alpha()
+        self.rect = self.image.get_rect()
         self.angle1 = 0
-        self.pos = pos
+        self.rect.x = x
+        self.rect.y = y
+        self.pos = (self.rect.x, self.rect.y)
         self.size = size
         self.fruits = []
         self._update_pos()
