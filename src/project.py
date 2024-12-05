@@ -85,7 +85,7 @@ class Rain():
             x = random.randrange(115, 565)
             self.y -= 200
             pos = (x, self.y)
-            fruit = FallingFruit(pos, self.fruit_size)
+            fruit = FallingFruit(x, self.y, self.fruit_size)
             self.fruits.insert(0, fruit)
 
     def draw(self, surface):
