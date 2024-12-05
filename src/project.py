@@ -27,7 +27,6 @@ class Fruit(pygame.sprite.Sprite):
         self.pos = pos
         self.size = size
         FallingFruit._update_pos(self)
-        #print(self.rect)
 
 
 class FallingFruit():
@@ -53,7 +52,6 @@ class FallingFruit():
         self.pos = (x, y)
         self.rect.y = y
         self.rect.x = x
-        #print(self.rect)
 
     def draw(self, surface):
         self.angle1 += 5
@@ -133,7 +131,6 @@ def main():
         if keys[pygame.K_RIGHT]:
             player.move(posX= 18, posY = 0)
         
-        #print(fruit.rect)
         collision = pygame.sprite.collide_rect(player, fruit)
         if collision:
             print("COLLISION")
